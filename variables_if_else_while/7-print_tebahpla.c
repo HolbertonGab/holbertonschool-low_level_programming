@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 /**
- * main - Prints the numbers from 0 to 9
+ * main - Entry point
  *
  * Return: Always 0 (Success)
  *
@@ -11,13 +11,14 @@
 
 int main(void)
 {
-	int num;
+	char alphabet = 'z';
 
-	for (num = '0'; num <= '9'; num++)
+	while (alphabet <= 'a')
 	{
-		putchar(num);
-	}
+		putchar(alphabet);
 
+		alphabet++;
+	}
 	putchar('\n');
 
 	return (0);
