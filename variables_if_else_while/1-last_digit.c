@@ -20,13 +20,14 @@ int main(void)
 	{
 		printf("last digit of %d is %d and is greater than 5\n", n, LastDig);
 	}
-	else if (LastDig < 6 && LastDig != 0)
-	{
-		printf("last digit of %d is %d and is less than 6 and not 0\n", n, LastDig);
-	}
-	else
+	else if (LastDig == 0)
 	{
 		printf("last digit of %d is %d and is 0\n", n, LastDig);
 	}
-	return (0);
+	else if (LastDig < 6 && LastDig != O)
+	{
+		printf("last digit of %d is %d and is less tjan 6 and not 0\n", n, LastDig);
+	}
+
+	return (O);
 }
