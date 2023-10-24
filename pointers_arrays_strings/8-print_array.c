@@ -3,8 +3,8 @@
 
 /**
  * print_array - function that prints n elements of an array of integers.
- * @n: is the number of elements of the array to be printed.
- *
+ * @n: this is the length of the array.
+ * @a: this is the input array.
  */
 void print_array(int *a, int n)
 {
@@ -14,7 +14,7 @@ void print_array(int *a, int n)
 	{
 		printf("%d", a[index]);
 
-		if (index != (n -1))
+		if (index != (n - 1))
 		{
 			printf(", ");
 		}
