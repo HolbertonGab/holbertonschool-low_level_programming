@@ -1,38 +1,30 @@
-#include "main.h"
-
+#include <stdio.h>
 /**
- * if_prime - func that check if number is prime.
+ * prime_finder - finds out if a number is prime recursively
  *
- * @n: the number to be checked
- * @i: the iteration times
+ * @x: number to determine if prime
+ * @y: number to check if divisor
  *
- * Return: 1 if the input integer is a prime number, otherwise return 0..
+ * Return: 1 if prime, 0 otherwise
  */
-int if_prime(int n, int i)
+int prime_finder(int x, int y)
 {
-
-	if (n <= 1)
-	{
-		return (0);
-	}
-	if (n % i == 0 && i > 1)
-	{
-		return (0);
-	}
-	if ((n / i) < i)
-	{
+	if (x == y)
 		return (1);
-	}
-	return (if_prime(n, i + 1));
+	if (!(x % y))
+		return (0);
+	return (prime_finder(x, y + 1));
 }
 /**
- * is_prime_number- Returns if a number is prime.
+ * is_prime_number - returns if a number is prime
  *
- * @n: the number to be checked
+ * @n: number to determine primeness of
  *
- * Return: integer value
+ * Return: 1 if prime, 0 otherwise
  */
 int is_prime_number(int n)
-
-	return (if_prime(n, 1));
+{
+	if (n < 2)
+		return (0);
+	return (prime_finder(n, 2));
 }
