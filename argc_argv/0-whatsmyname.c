@@ -4,13 +4,13 @@
 /**
  * main - prints the name of the program
  *
- * @argc: number of arguments to program
- * @argv: arguments to program
+ * @argc: number of arguments to the program.
+ * @argv: array of pointers to the arguments.
  *
  * Return: 0 if successful
  */
-int main(int argc, char *argv[])
+int main(int __attribute__((__unused__)) argc, char *argv[])
 {
-	printf("%s", argv[argc - argc]);
+	printf("%s", argv[0]);
 	return (0);
 }
