@@ -9,11 +9,11 @@
  * Description: Longer description
  */
 
-struct dog
+typedef struct dog
 {
 	char *name;
 	float age;
 	char *owner;
-};
+}dog;
 void print_dog(struct dog *d);
 #endif
