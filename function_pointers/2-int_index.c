@@ -6,16 +6,16 @@
  * int_index - function that searches for an integer
  *
  * @array: the array
- * @size: the size of the array
+ * @size: number of elements in the array
  * @cmp: pointer to compare the function
  *
- * Return: NULL if success
+ * Return:
  */
 int int_index(int *array, int size, int (*cmp)(int))
 {
 	int i;
 
-	if (size <= 0)
+	if ( array == NULL || cmp == NULL)
 	{
 		return (-1);
 	}
