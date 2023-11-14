@@ -20,11 +20,15 @@ int (*get_op_func(char *s))(int, int)
 		{NULL, NULL}
 	};
 
-	while (ops[i].op != NULL)
+	int i = 0;
+
+	while (ops[i].f != NULL)
 	{
-		if (*(ops[i].op) == *s && s[i] == '\0')
+		if (*s == *(ops[i].op) && s[1] == '\0')
 			return (ops[i].f);
-			i++;
+		i++;
 	}
-	return (NULL);
+	printf("Error\n");
+	exit(99);
 }
+
