@@ -68,12 +68,12 @@ void print_all(const char * const format, ...)
 	va_start(ap, format);
 	int i = 0
 
-        for (i = 0; types[i].type; ++i)
+		for (i = 0; types[i].type; ++i)
 		{
-            if (types[i].type == *format)
+			if (types[i].type == *format)
 			{
-                types[i].func(ap);
-                printf(", ");
+				types[i].func(ap);
+				printf(", ");
 				break;
 			}
 		}
