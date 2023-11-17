@@ -55,6 +55,8 @@ void print_str(va_list ap)
 void print_all(const char * const format, ...)
 {
 	va_list ap;
+	int i = 0;
+	int j = 0;
 
 	printer_t types[] = {
 		{"c", print_char},
@@ -66,6 +68,20 @@ void print_all(const char * const format, ...)
 	};
 
 	va_start(ap, format);
+
+	while (format && format[i])
+	{
+		while (types[j].symbol != NULL)
+		{
+			if (format[i] == types[j].symbol[0])
+			{
+				types[j].print(ap);
+				break;
+			}
+			j++;
+		}
+		i++;
+	}
 	va_end(ap);
 	printf("\n");
 }
