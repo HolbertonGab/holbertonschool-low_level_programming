@@ -4,29 +4,24 @@
 #include "main.h"
 
 /**
- * print_binary - function that prints the binary representation of a number
+ * print_binary - prints a number as binary string
+ * @n: the number to print
  *
- * @n: -
- *
-*/
+ */
 void print_binary(unsigned long int n)
 {
-	int num_bits = sizeof(unsigned long int) * 8;
-	int i = 0;
+	int bit = sizeof(n) * 8, printed = 0;
 
-	for (i = num_bits - 1; i >= 0; i--)
+	while (bit)
 	{
-
-		unsigned long int bitmask = 1UL << i;
-
-		if (n & bitmask)
+		if (n & 1L << --bit)
 		{
 			_putchar('1');
+			printed++;
 		}
-		else
-		{
+		else if (printed)
 			_putchar('0');
-		}
 	}
-	_putchar('\n');
+	if (!printed)
+		_putchar('0');
 }
